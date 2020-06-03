@@ -42,9 +42,10 @@ class App extends Component {
 						<Link to='/Projects'>Projects</Link>
 					</Navigation>
 				</Drawer>
-				<Main />
-				<Footer />
-				<Content />
+				<Content>
+					<Main />
+					<Footer />
+				</Content>
 			</Layout>
 		);
 	}
