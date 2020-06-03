@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+.root {
+	flex-grow: 1;
+}
+.header-color {
+	background-color: white;
+}
+.about-grid {
+	background-image: url('img/hero.jpg');
+	background-position: 0px 0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	top: 0;
+	overflow: hidden;
+}
+.lead {
+	font-family: 'Roboto' sans-serif;
+	font-size: 1.25em;
+	line-height: 1.65;
+	padding: 0 45px;
+	color: #3f3f3f;
+}
+.mdl-layout__drawer-button {
+	opacity: 25%;
+	background-color: black !important;
+}
+.mdl-layout__header-row .mdl-navigation__link {
+	font-size: 15px;
+	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+	color: #757575 !important;
+}
+.profileImg {
+	display: flex;
+	margin-left: 30px;
+	max-width: 225px;
+	border-radius: 50%;
+}
+.animationNation {
+	animation: fadeInUp;
+	animation-duration: 2s;
+}
+.bannerText {
+	padding-left: 60px;
+	padding-right: 60px;
+}
+.bannerText h1 {
+	font-size: 66px;
+	font-weight: bold;
+	color: black;
+}
+.bannerText p {
+	color: #fff;
+	font-size: 20px;
+	padding: 1em;
+}
+.socialLinks i {
+	color: #ff7676;
+	font-size: 3em;
+	padding: 8px;
+	margin-bottom: 20px;
+}
+.socialLinks {
+	display: flex;
+	justify-content: space-around;
+}
+.skills {
+	display: flex;
+	justify-content: space-between;
+	width: 75%;
+	margin: auto;
+}
+.skills i {
+	font-size: 2em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.about-icons {
+	display: flex;
+	color: #ff7676;
+	font-size: 30px;
+	margin: 33px 26px;
+	padding: 0 20px;
+	text-align: center;
+}
+.about-icons span {
+	font-family: 'Rubik', sans-serif;
+	font-size: 26px;
+	font-weight: 300;
+	padding-left: 10px;
+}
+.im-great {
+	color: #636363;
+	padding: 0px 20px;
+	text-align: left;
+	margin: 33px 0;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.contact-grid p {
+	font-family: 'Lato', sans-serif;
+	font-style: italic;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.contact-list i {
+	display: flex;
+	font-size: 35px;
+	color: #fff;
 }
-
-.App-link {
-  color: #61dafb;
+/* .list-items {
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+} */
+.footer-container {
+	margin-top: calc(5% + 30px);
+	text-align: center;
+	position: relative;
+	margin-bottom: 30px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.connect-footer {
+	color: #374252;
+	font-family: Rubik, sans-serif;
+	margin-bottom: 30px;
 }
