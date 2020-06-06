@@ -94,68 +94,67 @@ export default function LandingPage() {
 				<Grid
 					container
 					style={{
+						display: 'flex',
+						justifyContent: 'center',
 						paddingLeft: 20,
 						paddingRight: 20,
-						display: 'flex',
 						background: '#F3F3F3',
 						paddingBottom: 70
 					}}>
-					<div data-aos='fade-up' data-aos-duration='2000'>
-						<Grid item xs={12}>
-							<h2
-								style={{
-									textAlign: 'center',
-									padding: 30,
-									color: '#374352'
-								}}>
-								My Skills
-							</h2>
-						</Grid>
-						<div>
-							<Grid item xs={12} sm={3} className={classes.skillsContainer}>
-								<div
-									style={{
-										display: 'flex',
-										justifyContent: 'center'
-									}}>
-									<ImportantDevicesIcon className={classes.icons} />
-								</div>
-								<h3 className={classes.h3}>Coding</h3>
-								<p className={classes.p}>
-									HTML, CSS, JavaScript, React, React Native, Angular, Vue.js,
-									TypeScript, GitHub, MongoDB.
-								</p>
-							</Grid>
-							<Grid item xs={12} sm={3} className={classes.skillsContainer}>
-								<div
-									style={{
-										display: 'flex',
-										justifyContent: 'center'
-									}}>
-									<EmojiObjectsOutlinedIcon className={classes.icons} />
-								</div>
-								<h3 className={classes.h3}>Smarts</h3>
-								<p className={classes.p}>
-									A problem solving, communicative, collaborative powerhouse.
-								</p>
-							</Grid>
+					<Grid item xs={12}>
+						<h2
+							style={{
+								textAlign: 'center',
+								padding: 30,
+								color: '#374352'
+							}}>
+							My Skills
+						</h2>
+					</Grid>
 
-							<Grid item xs={12} sm={3} className={classes.skillsContainer}>
-								<div
-									style={{
-										display: 'flex',
-										justifyContent: 'center'
-									}}>
-									<CreateOutlinedIcon className={classes.icons} />
-								</div>
-								<h3 className={classes.h3}>Design</h3>
-								<p className={classes.p}>
-									Photography, Adobe Photoshop, Illustrator, InDesign,
-									Lightroom, Material Design.
-								</p>
-							</Grid>
+					<Grid item xs={12} sm={3} className={classes.skillsContainer}>
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'center'
+							}}>
+							<ImportantDevicesIcon className={classes.icons} />
 						</div>
-					</div>
+						<h3 className={classes.h3}>Coding</h3>
+						<p className={classes.p}>
+							HTML, CSS, JavaScript, React, React Native, Angular, Vue.js,
+							TypeScript, GitHub, MongoDB.
+						</p>
+					</Grid>
+
+					<Grid item xs={12} sm={3} className={classes.skillsContainer}>
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'center'
+							}}>
+							<EmojiObjectsOutlinedIcon className={classes.icons} />
+						</div>
+						<h3 className={classes.h3}>Smarts</h3>
+						<p className={classes.p}>
+							A problem solving, communicative, collaborative powerhouse.
+						</p>
+					</Grid>
+
+					<Grid item xs={12} sm={3} className={classes.skillsContainer}>
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'center'
+							}}>
+							<CreateOutlinedIcon className={classes.icons} />
+						</div>
+						<h3 className={classes.h3}>Design</h3>
+						<p className={classes.p}>
+							Photography, Adobe Photoshop, Illustrator, InDesign, Lightroom,
+							Material Design.
+						</p>
+					</Grid>
 				</Grid>
 			</Container>
 		</Grid>

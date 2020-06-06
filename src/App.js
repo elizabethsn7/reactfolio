@@ -76,9 +76,9 @@ export default function App() {
 
 	return (
 		<div className={classes.root}>
-			<div style={{ marginBottom: 60 }}>
+			<div>
 				<AppBar
-					position='fixed'
+					position='static'
 					className={clsx(classes.appBar, {
 						[classes.appBarShift]: open
 					})}>
