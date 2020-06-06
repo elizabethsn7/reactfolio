@@ -1,9 +1,6 @@
 .root {
 	flex-grow: 1;
 }
-.header-color {
-	background-color: white;
-}
 .about-grid {
 	background-image: url('img/hero.jpg');
 	background-position: 0px 0px;
@@ -14,20 +11,11 @@
 	overflow: hidden;
 }
 .lead {
-	font-family: 'Roboto' sans-serif;
+	font-family: 'Roboto' sans-serif !important;
 	font-size: 1.25em;
 	line-height: 1.65;
 	padding: 0 45px;
 	color: #3f3f3f;
-}
-.mdl-layout__drawer-button {
-	opacity: 25%;
-	background-color: black !important;
-}
-.mdl-layout__header-row .mdl-navigation__link {
-	font-size: 15px;
-	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-	color: #757575 !important;
 }
 .profileImg {
 	display: flex;
@@ -39,20 +27,7 @@
 	animation: fadeInUp;
 	animation-duration: 2s;
 }
-.bannerText {
-	padding-left: 60px;
-	padding-right: 60px;
-}
-.bannerText h1 {
-	font-size: 66px;
-	font-weight: bold;
-	color: black;
-}
-.bannerText p {
-	color: #fff;
-	font-size: 20px;
-	padding: 1em;
-}
+
 .socialLinks i {
 	color: #ff7676;
 	font-size: 3em;
@@ -63,6 +38,8 @@
 	display: flex;
 	justify-content: space-around;
 }
+
+/* Not in LandingPage */
 .skills {
 	display: flex;
 	justify-content: space-between;

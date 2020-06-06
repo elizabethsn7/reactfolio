@@ -1,53 +1,136 @@
-import React, { Component } from 'react';
+import React from 'react';
+import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import './App.css';
-import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
+
 import Main from './components/Main';
 import Footer from './components/Footer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
+import Drawer from '@material-ui/core/Drawer';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-class App extends Component {
-	render() {
-		return (
-			<Layout fixedHeader>
-				<Header
-					style={{ backgroundColor: 'white' }}
-					className='header-color'
-					title={
-						<Link style={{ textDecoration: 'none', color: '#757575' }} to='/'>
-							Liz Kipp
-						</Link>
-					}>
-					<Navigation>
-						<Link to='/About'>About</Link>
-						<Link to='/Contact'>Contact</Link>
-						<Link to='/Projects'>Projects</Link>
-					</Navigation>
-				</Header>
-				<Drawer
-					style={{ backgroundColor: 'white' }}
-					title={
-						<Link
-							style={{
-								textDecoration: 'none',
-								color: 'black'
-							}}
-							to='/'>
-							Home
-						</Link>
-					}>
-					<Navigation>
-						<Link to='/Resume'>Resume</Link>
-						<Link to='/About'>About</Link>
-						<Link to='/Contact'>Contact</Link>
-						<Link to='/Projects'>Projects</Link>
-					</Navigation>
-				</Drawer>
-				<Content>
-					<Main />
-					<Footer />
-				</Content>
-			</Layout>
-		);
+const drawerWidth = 240;
+
+const useStyles = makeStyles(theme => ({
+	root: {
+		flexGrow: 1
+	},
+	menuButton: {
+		textDecoration: 'none',
+		marginRight: theme.spacing(2)
+	},
+	appBar: {
+		backgroundColor: '#fff'
+	},
+	title: {
+		flexGrow: 1
+	},
+	hide: {
+		display: 'none'
+	},
+	drawer: {
+		width: drawerWidth,
+		flexShrink: 0
+	},
+	drawerPaper: {
+		width: drawerWidth
+	},
+	drawerHeader: {
+		display: 'flex',
+		alignItems: 'center',
+		padding: theme.spacing(0, 1),
+		// necessary for content to be below app bar
+		...theme.mixins.toolbar,
+		justifyContent: 'flex-end'
+	},
+	content: {
+		flexGrow: 1,
+		padding: theme.spacing(3),
+		transition: theme.transitions.create('margin', {
+			easing: theme.transitions.easing.sharp,
+			duration: theme.transitions.duration.leavingScreen
+		}),
+		marginLeft: -drawerWidth
 	}
+}));
+
+export default function App() {
+	const classes = useStyles();
+	const theme = useTheme();
+	const [open, setOpen] = React.useState(false);
+
+	const handleDrawerOpen = () => {
+		setOpen(true);
+	};
+
+	const handleDrawerClose = () => {
+		setOpen(false);
+	};
+
+	return (
+		<div className={classes.root}>
+			<div style={{ marginBottom: 60 }}>
+				<AppBar
+					position='fixed'
+					className={clsx(classes.appBar, {
+						[classes.appBarShift]: open
+					})}>
+					<Toolbar>
+						<IconButton
+							edge='start'
+							aria-label='open drawer'
+							onClick={handleDrawerOpen}
+							className={clsx(classes.menuButton, open && classes.hide)}>
+							<MenuIcon />
+						</IconButton>
+						<Typography variant='h6' className={classes.title}>
+							<Link style={{ textDecoration: 'none', color: '#757575' }} to='/'>
+								Liz Kipp
+							</Link>
+						</Typography>
+
+						<Drawer
+							className={classes.drawer}
+							varient='temporary'
+							anchor='left'
+							open={open}
+							classes={{
+								paper: classes.drawerPaper
+							}}>
+							<div className={classes.drawerHeader}>
+								<IconButton onClick={handleDrawerClose}>
+									{theme.direction === 'ltr' ? (
+										<ChevronLeftIcon />
+									) : (
+										<ChevronRightIcon />
+									)}
+								</IconButton>
+							</div>
+							<Divider />
+
+							<Button color='inherit'>
+								<Link to='/About'>About</Link>
+							</Button>
+							<Button color='inherit'>
+								<Link to='/Contact'>Contact</Link>
+							</Button>
+							<Button color='inherit'>
+								<Link to='/Projects'>Projects</Link>
+							</Button>
+						</Drawer>
+					</Toolbar>
+				</AppBar>
+			</div>
+
+			<Main />
+			<Footer />
+		</div>
+	);
 }
-export default App;

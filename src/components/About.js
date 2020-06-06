@@ -66,50 +66,55 @@ class About extends Component {
 							development.
 						</p>
 					</Grid>
-					<div
+					<Grid
+						container
 						style={{
 							width: ' 100%',
 							background: '#F5F5F5'
 						}}>
 						<Grid item xs={12} style={{ textAlign: 'center' }}>
 							<h2>I'm really great.</h2>
+							<br></br>
 							<h3>Just ask my mom, she thinks so.</h3>
 						</Grid>
+
 						<div className='about-icons'>
-							<Grid item sm={4}>
-								<i className='fas fa-heart'>
-									<span>I bring emotion</span>
-								</i>
-								<p className='im-great'>
-									I'm not talking about over the top foo foo emotions, I'm
-									talking emotions that empower, emotions that can only be
-									fueled by passion for doing what you love.
-								</p>
-							</Grid>
-							<Grid item sm={4}>
-								<i className='fas fa-rocket'>
-									<span>I'm a team player</span>
-								</i>
-								<p className='im-great'>
-									Being a part of a team has been ingrained. Growing up in the
-									midwest as the middle child of five kids, I didn't have a
-									choice. I had to be a team player, however, it also taught me
-									that if I wanted my voice heard I had to be quick and able to
-									work on my own.
-								</p>
-							</Grid>
-							<Grid item sm={4}>
-								<i className='fas fa-pencil-ruler'>
-									<span>I design extraordinary</span>
-								</i>
-								<p className='im-great'>
-									I am a trained Photographer. I come with a built in design
-									minded background. The Adobe Creative Suite is my friend and
-									we've been hanging out for quite some time now.
-								</p>
+							<Grid container>
+								<Grid item xs={12} md={4}>
+									<i className='fas fa-heart'>
+										<span>I bring emotion</span>
+									</i>
+									<p className='im-great'>
+										I'm not talking about over the top foo foo emotions, I'm
+										talking emotions that empower, emotions that can only be
+										fueled by passion for doing what you love.
+									</p>
+								</Grid>
+								<Grid item xs={12} md={4}>
+									<i className='fas fa-rocket'>
+										<span>I'm a team player</span>
+									</i>
+									<p className='im-great'>
+										Being a part of a team has been ingrained. Growing up in the
+										midwest as the middle child of five kids, I didn't have a
+										choice. I had to be a team player, however, it also taught
+										me that if I wanted my voice heard I had to be quick and
+										able to work on my own.
+									</p>
+								</Grid>
+								<Grid item xs={12} md={4}>
+									<i className='fas fa-pencil-ruler'>
+										<span>I design extraordinary</span>
+									</i>
+									<p className='im-great'>
+										I am a trained Photographer. I come with a built in design
+										minded background. The Adobe Creative Suite is my friend and
+										we've been hanging out for quite some time now.
+									</p>
+								</Grid>
 							</Grid>
 						</div>
-					</div>
+					</Grid>
 				</Grid>
 			</div>
 		);
