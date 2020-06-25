@@ -1,13 +1,72 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import '../App.css';
+import Typography from '@material-ui/core/Typography';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import ScrollToTop from 'react-router-scroll-top';
+import Butter from '../img/butter.png';
+
+AOS.init();
 
 class Footer extends Component {
+	componentDidMount() {
+		window.scrollTo(0, 0);
+	}
 	render() {
 		return (
-			<div className='footer-container'>
-				<h3 className='connect-footer'>Let's Connect</h3>
-				<div className='socialLinks'>
-					<Grid item sm={6}>
+			<div>
+				<Grid container className='gradiantBkgd'>
+					<Grid item lg={8}>
+						<div data-aos='fade-up' data-aos-duration='2000'>
+							<Typography variant='h3' className='workTogther'>
+								Let's Work Together
+							</Typography>
+
+							<Typography variant='h5' className='workTogther'>
+								I'm eager. I'm Willing. I'm looking forward to it.
+							</Typography>
+						</div>
+					</Grid>
+					<Grid container>
+						<Grid item sm={12} className='btnGrid'>
+							<div data-aos='fade-up' data-aos-duration='2000'>
+								<Link style={{ textDecoration: 'none' }} to='/Contact'>
+									<Button
+										style={{ padding: 10, margin: 10 }}
+										size='large'
+										className='contact-button ghost ghost-white btn-btn'>
+										Contact Me
+									</Button>
+								</Link>
+								<Link
+									style={{ textDecoration: 'none' }}
+									to='../liz-kipp-resume.pdf'
+									target='_blank'
+									download>
+									<ScrollToTop />
+									<Button
+										style={{ padding: 10, margin: 10 }}
+										size='large'
+										className='contact-button ghost ghost-white btn-btn'>
+										Resume
+									</Button>
+								</Link>
+							</div>
+						</Grid>
+					</Grid>
+				</Grid>
+
+				<Grid container className='footer-container'>
+					<Grid item>
+						<h3 className='connect-footer'>Connect</h3>
+					</Grid>
+				</Grid>
+
+				<Grid container>
+					<Grid item xs={12} className='socialLinks'>
 						<a
 							href='https://www.linkedin.com/in/elizabethsn7/'
 							target='_blank'
@@ -26,8 +85,35 @@ class Footer extends Component {
 							rel='noopener noreferrer'>
 							<i className='fab fa-instagram-square' aria-hidden='true' />
 						</a>
+						<a
+							href='http://medium.com'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<i className='fab fa-medium' aria-hidden='true' />
+						</a>
+						<a
+							href='http://medium.com'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<i className='fab fa-twitter-square' aria-hidden='true' />
+						</a>
 					</Grid>
-				</div>
+
+					<Grid container className='butter'>
+						<Grid item>
+							<Typography>
+								Blog created with
+								<a
+									href='https://buttercms.com'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<img src={Butter} alt='butter logo' />
+								</a>
+								easy peasy lemmon squeezy!
+							</Typography>
+						</Grid>
+					</Grid>
+				</Grid>
 			</div>
 		);
 	}

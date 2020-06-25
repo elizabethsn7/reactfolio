@@ -4,7 +4,8 @@ import LandingPage from './LandingPage';
 import About from './About';
 import Contact from './Contact';
 import Projects from './Projects';
-// import Resume from './Resume';
+import Blog from './Blog';
+import Post from './Post';
 
 const Main = () => (
 	<Switch>
@@ -12,7 +13,8 @@ const Main = () => (
 		<Route path='/About' component={About} />
 		<Route path='/Contact' component={Contact} />
 		<Route path='/Projects' component={Projects} />
-		{/* <Route path='/Resume' component={Resume} /> */}
+		<Route exact path='/Blog' component={Blog} />
+		<Route path='/Blog/:slug' render={Post} />
 	</Switch>
 );
 export default Main;

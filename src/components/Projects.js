@@ -13,11 +13,11 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
-import Collapse from '@material-ui/core/Collapse';
 import clsx from 'clsx';
-
 import AppBar from '@material-ui/core/AppBar';
 import MyFlixHome from '../img/myFlixHome.jpg';
 import Meetup from '../img/meetup.jpg';
@@ -30,25 +30,17 @@ const useStyles = makeStyles(theme => ({
 		backgroundColor: theme.palette.background.paper,
 		color: '#000'
 	},
-	projectsGrid: {
-		display: 'flex',
-		justifyContent: 'center'
-	},
 	cardyB: {
-		maxWidth: 400
-	},
-	expand: {
-		transform: 'rotate(0deg)',
-		marginLeft: 'auto',
-		transition: theme.transitions.create('transform', {
-			duration: theme.transitions.duration.shortest
-		})
-	},
-	expandOpen: {
-		transform: 'rotate(180deg)'
+		maxWidth: 450,
+		margin: 'auto'
 	},
 	actionBottom: {
 		background: '#F5F5F5'
+	},
+	helper: {
+		borderLeft: `2px solid ${theme.palette.divider}`,
+		padding: theme.spacing(1, 2),
+		marginLeft: 10
 	}
 }));
 
@@ -102,12 +94,6 @@ export default function Projects() {
 		setValue(newValue);
 	};
 
-	const [expanded, setExpanded] = React.useState(false);
-
-	const handleExpandClick = () => {
-		setExpanded(!expanded);
-	};
-
 	return (
 		<ThemeProvider theme={theme}>
 			<Grid container style={{ justifyContent: 'center' }}>
@@ -125,10 +111,11 @@ export default function Projects() {
 					</AppBar>
 				</Grid>
 			</Grid>
-			<Box className={classes.projectsGrid}>
+
+			<Box style={{ display: 'flex', justifyContent: 'center' }}>
 				<TabPanel value={value} index={0}>
 					<Grid container spacing={2}>
-						<Grid item xs={12} sm={6}>
+						<Grid item xs={12} md={6}>
 							<Card className={classes.cardyB}>
 								<CardActionArea>
 									<CardMedia
@@ -144,55 +131,51 @@ export default function Projects() {
 									</CardContent>
 								</CardActionArea>
 								<CardActions disableSpacing className={classes.actionBottom}>
-									<Button>
-										<a
-											href='https://github.com/elizabethsn7/myFlix'
-											target='_blank'
-											rel='noopener noreferrer'>
-											Github
-										</a>
-									</Button>
-									<Button>
-										<a
-											href='https://liz-flix.herokuapp.com/client/'
-											target='_blank'
-											rel='noopener noreferrer'>
-											Live Demo
-										</a>
-									</Button>
-									<IconButton
-										className={clsx(classes.expand, {
-											[classes.expandOpen]: expanded
-										})}
-										onClick={handleExpandClick}
-										aria-expanded={expanded}
-										aria-label='show more'>
-										<UnfoldMoreIcon />
-									</IconButton>
+									<ExpansionPanel>
+										<ExpansionPanelSummary
+											style={{ display: 'flex' }}
+											expandIcon={<UnfoldMoreIcon />}
+											aria-controls='panel1a-content'
+											id='panel1a-header'>
+											<Button>
+												<a
+													href='https://github.com/elizabethsn7/myFlix'
+													target='_blank'
+													rel='noopener noreferrer'>
+													Github
+												</a>
+											</Button>
+											<Button>
+												<a
+													href='https://liz-flix.herokuapp.com/client/'
+													target='_blank'
+													rel='noopener noreferrer'>
+													Live Demo
+												</a>
+											</Button>
+											<div className={clsx(classes.helper)}>
+												<Typography>Read More</Typography>
+											</div>
+										</ExpansionPanelSummary>
+										<ExpansionPanelDetails>
+											<Typography variant='body1'>
+												Users are able to access information about a variety of
+												movies, directors, ratings, and genres. They are able to
+												sign up, update their personal information, and create a
+												list of their favorite movies.
+												<br></br>
+												<strong>Technologies used:</strong> <br></br>
+												HTML, CSS, JavaScript, React, Bootstrap, NoSQL, MongoDB,
+												Express, Passport, bcrypt
+											</Typography>
+										</ExpansionPanelDetails>
+									</ExpansionPanel>
 								</CardActions>
-								<Collapse in={expanded} timeout='auto' unmountOnExit>
-									<CardContent>
-										<Typography variant='body1' component='span'>
-											Users are able to access information about a variety of
-											movies, directors, ratings, and genres. They are able to
-											sign up, update their personal information, and create a
-											list of their favorite movies.
-										</Typography>
-										<br></br>
-										<Typography variant='body1'>
-											<strong>Technologies used:</strong>{' '}
-										</Typography>
-										<Typography variant='body1'>
-											HTML, CSS, JavaScript, React, Bootstrap, NoSQL, MongoDB,
-											Express, Passport, bcrypt
-										</Typography>
-									</CardContent>
-								</Collapse>
 							</Card>
 						</Grid>
 
 						{/* Meetup Card */}
-						<Grid item xs={12} sm={6}>
+						<Grid item xs={12} md={6}>
 							<Card className={classes.cardyB}>
 								<CardActionArea>
 									<CardMedia
@@ -208,41 +191,36 @@ export default function Projects() {
 									</CardContent>
 								</CardActionArea>
 								<CardActions disableSpacing className={classes.actionBottom}>
-									<Button>
-										<a
-											href='https://github.com/elizabethsn7/meetup-two'
-											target='_blank'
-											rel='noopener noreferrer'>
-											Github
-										</a>
-									</Button>
-									<IconButton
-										className={clsx(classes.expand, {
-											[classes.expandOpen]: expanded
-										})}
-										onClick={handleExpandClick}
-										aria-expanded={expanded}
-										aria-label='show more'>
-										<UnfoldMoreIcon />
-									</IconButton>
+									<ExpansionPanel>
+										<ExpansionPanelSummary
+											expandIcon={<UnfoldMoreIcon />}
+											aria-controls='panel1a-content'
+											id='panel1a-header'>
+											<Button>
+												<a
+													href='https://github.com/elizabethsn7/meetup-two'
+													target='_blank'
+													rel='noopener noreferrer'>
+													Github
+												</a>
+											</Button>
+											<div className={clsx(classes.helper)}>
+												<Typography>Read More</Typography>
+											</div>
+										</ExpansionPanelSummary>
+										<ExpansionPanelDetails>
+											<Typography variant='body1'>
+												A serverless progressive web app built with React using
+												TDD technique. The application uses the Meetup API to
+												fetch upcoming events for a selected city.
+												<br></br>
+												<strong>Technologies used:</strong> <br></br>
+												Unit, Integration, User Acceptance and End-to-End
+												Testing, OOP, React, React Bootstrap{' '}
+											</Typography>
+										</ExpansionPanelDetails>
+									</ExpansionPanel>
 								</CardActions>
-								<Collapse in={expanded} timeout='auto' unmountOnExit>
-									<CardContent>
-										<Typography variant='body1' component='span'>
-											A serverless progressive web app built with React using
-											TDD technique. The application uses the Meetup API to
-											fetch upcoming events for a selected city.
-										</Typography>
-										<br></br>
-										<Typography variant='body1'>
-											<strong>Technologies used:</strong>{' '}
-										</Typography>
-										<Typography variant='body1'>
-											Unit, Integration, User Acceptance and End-to-End Testing,
-											OOP, React, React Bootstrap{' '}
-										</Typography>
-									</CardContent>
-								</Collapse>
 							</Card>
 						</Grid>
 					</Grid>
@@ -265,48 +243,43 @@ export default function Projects() {
 							</CardContent>
 						</CardActionArea>
 						<CardActions disableSpacing className={classes.actionBottom}>
-							<Button>
-								<a
-									href='https://github.com/elizabethsn7/angular-quiz'
-									target='_blank'
-									rel='noopener noreferrer'>
-									Github
-								</a>
-							</Button>
-							<Button>
-								<a
-									href='https://elizabethsn7.github.io/angular-quiz/welcomeangular-quiz'
-									target='_blank'
-									rel='noopener noreferrer'>
-									Live Demo
-								</a>
-							</Button>
-							<IconButton
-								className={clsx(classes.expand, {
-									[classes.expandOpen]: expanded
-								})}
-								onClick={handleExpandClick}
-								aria-expanded={expanded}
-								aria-label='show more'>
-								<UnfoldMoreIcon />
-							</IconButton>
+							<ExpansionPanel>
+								<ExpansionPanelSummary
+									expandIcon={<UnfoldMoreIcon />}
+									aria-controls='panel1a-content'
+									id='panel1a-header'>
+									<Button>
+										<a
+											href='https://github.com/elizabethsn7/angular-quiz'
+											target='_blank'
+											rel='noopener noreferrer'>
+											Github
+										</a>
+									</Button>
+									<Button>
+										<a
+											href='https://elizabethsn7.github.io/angular-quiz/welcomeangular-quiz'
+											target='_blank'
+											rel='noopener noreferrer'>
+											Live Demo
+										</a>
+									</Button>
+									<div className={clsx(classes.helper)}>
+										<Typography>Read More</Typography>
+									</div>
+								</ExpansionPanelSummary>
+								<ExpansionPanelDetails>
+									<Typography variant='body1'>
+										Advanced Angular concepts, from templates and data binding
+										to interpolation and routing. I encorporated Angular
+										Material for the UI design components.
+										<br></br>
+										<strong>Technologies used:</strong> <br></br>
+										TypeScript, Javascript, Angular Material, GitHub Pages
+									</Typography>
+								</ExpansionPanelDetails>
+							</ExpansionPanel>
 						</CardActions>
-						<Collapse in={expanded} timeout='auto' unmountOnExit>
-							<CardContent>
-								<Typography variant='body1' component='span'>
-									Advanced Angular concepts, from templates and data binding to
-									interpolation and routing. I encorporated Angular Material for
-									the UI design components.
-								</Typography>
-								<br></br>
-								<Typography variant='body1'>
-									<strong>Technologies used:</strong>{' '}
-								</Typography>
-								<Typography variant='body1'>
-									TypeScript, Javascript, Angular Material, GitHub Pages
-								</Typography>
-							</CardContent>
-						</Collapse>
 					</Card>
 				</TabPanel>
 				<TabPanel value={value} index={2}>
@@ -325,48 +298,42 @@ export default function Projects() {
 							</CardContent>
 						</CardActionArea>
 						<CardActions disableSpacing className={classes.actionBottom}>
-							<Button>
-								<a
-									href='https://github.com/elizabethsn7/vue-todo'
-									target='_blank'
-									rel='noopener noreferrer'>
-									Github
-								</a>
-							</Button>
-							<Button>
-								<a
-									href='https://elizabethsn7.github.io/vue-todo/'
-									target='_blank'
-									rel='noopener noreferrer'>
-									Live Demo
-								</a>
-							</Button>
-							<IconButton
-								className={clsx(classes.expand, {
-									[classes.expandOpen]: expanded
-								})}
-								onClick={handleExpandClick}
-								aria-expanded={expanded}
-								aria-label='show more'>
-								<UnfoldMoreIcon />
-							</IconButton>
+							<ExpansionPanel>
+								<ExpansionPanelSummary
+									expandIcon={<UnfoldMoreIcon />}
+									aria-controls='panel1a-content'
+									id='panel1a-header'>
+									<Button>
+										<a
+											href='https://github.com/elizabethsn7/vue-todo'
+											target='_blank'
+											rel='noopener noreferrer'>
+											Github
+										</a>
+									</Button>
+									<Button>
+										<a
+											href='https://elizabethsn7.github.io/vue-todo/'
+											target='_blank'
+											rel='noopener noreferrer'>
+											Live Demo
+										</a>
+									</Button>
+									<div className={clsx(classes.helper)}>
+										<Typography>Read More</Typography>
+									</div>
+								</ExpansionPanelSummary>
+								<ExpansionPanelDetails>
+									<Typography variant='body1'>
+										An SPA where users are able to create, edit, complete, and
+										delete items from a list.
+										<br></br>
+										<strong>Technologies used: </strong> <br></br>
+										HTML, CSS, Vue.js, Vue Material, GitHub
+									</Typography>
+								</ExpansionPanelDetails>
+							</ExpansionPanel>
 						</CardActions>
-						<Collapse in={expanded} timeout='auto' unmountOnExit>
-							<CardContent>
-								<Typography variant='body1' component='span'>
-									An SPA where users are able to create, edit, complete, and
-									delete items from a list.
-								</Typography>
-								<br></br>
-								<Typography variant='body1'>
-									<strong>Technologies used: </strong>{' '}
-								</Typography>
-
-								<Typography variant='body1'>
-									HTML, CSS, Vue.js, Vue Material, GitHub
-								</Typography>
-							</CardContent>
-						</Collapse>
 					</Card>
 				</TabPanel>
 			</Box>
