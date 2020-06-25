@@ -29,6 +29,19 @@ const useStyles = makeStyles(theme => ({
 	appBar: {
 		backgroundColor: '#fff'
 	},
+	navBtn: {
+		fontSize: 16,
+		padding: '5px 40px',
+		'&:hover': {
+			backgroundColor: 'transparent'
+		}
+	},
+	link: {
+		textDecoration: 'none',
+		'&:hover': {
+			borderBottom: '1px solid #ff7676'
+		}
+	},
 	title: {
 		flexGrow: 1
 	},
@@ -95,10 +108,9 @@ export default function App() {
 								Liz Kipp
 							</Link>
 						</Typography>
-
 						<Drawer
 							className={classes.drawer}
-							varient='temporary'
+							varient='persistent'
 							anchor='left'
 							open={open}
 							classes={{
@@ -114,16 +126,33 @@ export default function App() {
 								</IconButton>
 							</div>
 							<Divider />
-
-							<Button color='inherit'>
-								<Link to='/About'>About</Link>
-							</Button>
-							<Button color='inherit'>
-								<Link to='/Contact'>Contact</Link>
-							</Button>
-							<Button color='inherit'>
-								<Link to='/Projects'>Projects</Link>
-							</Button>
+							<div style={{ padding: 20 }}>
+								<Button onClick={handleDrawerClose} className={classes.navBtn}>
+									<Link className={classes.link} to='/'>
+										Home
+									</Link>
+								</Button>
+								<Button onClick={handleDrawerClose} className={classes.navBtn}>
+									<Link className={classes.link} to='/About'>
+										About
+									</Link>
+								</Button>
+								<Button onClick={handleDrawerClose} className={classes.navBtn}>
+									<Link className={classes.link} to='/Contact'>
+										Contact
+									</Link>
+								</Button>
+								<Button className={classes.navBtn} onClick={handleDrawerClose}>
+									<Link className={classes.link} to='/Projects'>
+										Projects
+									</Link>
+								</Button>
+								<Button className={classes.navBtn} onClick={handleDrawerClose}>
+									<Link className={classes.link} to='/Blog'>
+										Blog
+									</Link>
+								</Button>
+							</div>
 						</Drawer>
 					</Toolbar>
 				</AppBar>
