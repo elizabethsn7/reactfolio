@@ -4,7 +4,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
 import Main from './components/Main';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -24,7 +24,8 @@ const useStyles = makeStyles(theme => ({
 	},
 	menuButton: {
 		textDecoration: 'none',
-		marginRight: theme.spacing(2)
+		marginRight: theme.spacing(2),
+		backgroundColor: '#edeaea'
 	},
 	appBar: {
 		backgroundColor: '#fff'
@@ -113,6 +114,7 @@ export default function App() {
 							varient='persistent'
 							anchor='left'
 							open={open}
+							onClose={handleDrawerClose}
 							classes={{
 								paper: classes.drawerPaper
 							}}>

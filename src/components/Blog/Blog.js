@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import butter from '../butter-client';
-import PostSnippet from './PostSnippet';
+import butter from '../../butter-client';
+import PostSnippet from '../Post/PostSnippet';
 import Grid from '@material-ui/core/Grid';
-import '../App.css';
+import '../../App.css';
+import './Blog.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -52,14 +53,13 @@ const Blog = () => {
 			<Grid item xs={12} className='header-grid'>
 				<div data-aos='fade-up' data-aos-duration='2000'>
 					<Grid item xs={12} md={8}>
-						<h1 className='headerH1 header-text'>Bloggity Blog Blog</h1>
+						<h1 className='headerH1'>Bloggity Blog Blog</h1>
 					</Grid>
 					<Grid item xs={12} md={8}>
-						<p className='description'>{/* think of somethign funny */}</p>
+						<p className='description'>Sometimes Funny. Always Authentic.</p>
 					</Grid>
 				</div>
 			</Grid>
-
 			<div className='post'>{getContent()}</div>
 		</div>
 	);

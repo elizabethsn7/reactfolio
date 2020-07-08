@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import './Projects.css';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
@@ -19,10 +20,10 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import clsx from 'clsx';
 import AppBar from '@material-ui/core/AppBar';
-import MyFlixHome from '../img/myFlixHome.jpg';
-import Meetup from '../img/meetup.jpg';
-import AngularQuiz from '../img/angular-quiz.jpg';
-import Vue from '../img/vue-js.jpg';
+import MyFlixHome from '../../img/myFlixHome.jpg';
+import Meetup from '../../img/meetup.jpg';
+import AngularQuiz from '../../img/angular-quiz.jpg';
+import Vue from '../../img/vue-js.jpg';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -115,7 +116,7 @@ export default function Projects() {
 			<Box style={{ display: 'flex', justifyContent: 'center' }}>
 				<TabPanel value={value} index={0}>
 					<Grid container spacing={2}>
-						<Grid item xs={12} md={6}>
+						<Grid item xs={12} sm={6}>
 							<Card className={classes.cardyB}>
 								<CardActionArea>
 									<CardMedia
@@ -175,7 +176,7 @@ export default function Projects() {
 						</Grid>
 
 						{/* Meetup Card */}
-						<Grid item xs={12} md={6}>
+						<Grid item xs={12} sm={6}>
 							<Card className={classes.cardyB}>
 								<CardActionArea>
 									<CardMedia
@@ -258,7 +259,7 @@ export default function Projects() {
 									</Button>
 									<Button>
 										<a
-											href='https://elizabethsn7.github.io/angular-quiz/welcomeangular-quiz'
+											href='https://elizabethsn7.github.io/angular-quiz/'
 											target='_blank'
 											rel='noopener noreferrer'>
 											Live Demo

@@ -1,0 +1,36 @@
+.post-snippet {
+	border-left: 1px solid #000;
+	padding-left: 25px;
+}
+
+.publication-date {
+	font-style: italic;
+	font-size: 16px;
+}
+.post {
+	margin: 10% 15%;
+}
+.post p {
+	font-family: 'Rubik', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+.post img {
+	font-size: 26px;
+	max-width: 100%;
+}
+
+.author {
+	display: flex;
+}
+
+.author img {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+}
+
+.author div {
+	align-self: center;
+	margin-left: 15px;
+}

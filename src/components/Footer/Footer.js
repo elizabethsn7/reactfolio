@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import '../App.css';
+import './Footer.css';
 import Typography from '@material-ui/core/Typography';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ScrollToTop from 'react-router-scroll-top';
-import Butter from '../img/butter.png';
+import Butter from '../../img/butter.png';
 
 AOS.init();
 
@@ -26,18 +26,22 @@ class Footer extends Component {
 							</Typography>
 
 							<Typography variant='h5' className='workTogther'>
-								I'm eager. I'm Willing. I'm looking forward to it.
+								I'm eager. I'm Willing.&nbsp;
+								<Typography variant='h5' className='rwd-break workTogther'>
+									{' '}
+									I'm looking forward to it.
+								</Typography>
 							</Typography>
 						</div>
 					</Grid>
 					<Grid container>
-						<Grid item sm={12} className='btnGrid'>
+						<Grid item xs={12} className='btnGrid'>
 							<div data-aos='fade-up' data-aos-duration='2000'>
 								<Link style={{ textDecoration: 'none' }} to='/Contact'>
 									<Button
 										style={{ padding: 10, margin: 10 }}
 										size='large'
-										className='contact-button ghost ghost-white btn-btn'>
+										className='contact-button ghost ghost-white'>
 										Contact Me
 									</Button>
 								</Link>
@@ -59,7 +63,12 @@ class Footer extends Component {
 					</Grid>
 				</Grid>
 
-				<Grid container className='footer-container'>
+				<Grid
+					container
+					style={{
+						display: 'flex',
+						justifyContent: 'center'
+					}}>
 					<Grid item>
 						<h3 className='connect-footer'>Connect</h3>
 					</Grid>
@@ -79,24 +88,6 @@ class Footer extends Component {
 							rel='noopener noreferrer'>
 							<i className='fa fa-github-square' aria-hidden='true' />
 						</a>
-						<a
-							href='http://instagram.com'
-							target='_blank'
-							rel='noopener noreferrer'>
-							<i className='fab fa-instagram-square' aria-hidden='true' />
-						</a>
-						<a
-							href='http://medium.com'
-							target='_blank'
-							rel='noopener noreferrer'>
-							<i className='fab fa-medium' aria-hidden='true' />
-						</a>
-						<a
-							href='http://medium.com'
-							target='_blank'
-							rel='noopener noreferrer'>
-							<i className='fab fa-twitter-square' aria-hidden='true' />
-						</a>
 					</Grid>
 
 					<Grid container className='butter'>
@@ -109,7 +100,6 @@ class Footer extends Component {
 									rel='noopener noreferrer'>
 									<img src={Butter} alt='butter logo' />
 								</a>
-								easy peasy lemmon squeezy!
 							</Typography>
 						</Grid>
 					</Grid>

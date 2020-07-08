@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../../App.css';
+import './Contact.css';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Hero from '../img/hero.jpg';
+import Hero from '../../img/hero.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -16,25 +17,23 @@ class Contact extends Component {
 				<div style={styles.contactContainer}>
 					<div data-aos='fade-up' data-aos-duration='2000'>
 						<Grid item xs={12}>
-							<h1 className='fontFamily' style={styles.contactList}>
-								Call, email, text.
-							</h1>
-							<h4 className='fontFamily'>You know what to do...</h4>
+							<h1 className='headerH1'>Call, email, text.</h1>
+							<h4 className='description'>You know what to do...</h4>
 						</Grid>
 
-						<Grid container spacing={2}>
-							<Grid item xs={4}>
-								<ListItemText style={styles.listItems}>
+						<Grid container>
+							<Grid item xs={12} sm={4}>
+								<ListItemText className='listItems'>
 									<i
 										style={styles.icons}
 										className='fa fa-phone-square'
 										aria-hidden='true'
 									/>
-									773-931-4424
+									See resume
 								</ListItemText>
 							</Grid>
-							<Grid item xs={4}>
-								<ListItemText style={styles.listItems}>
+							<Grid item xs={12} sm={4}>
+								<ListItemText className='listItems'>
 									<i
 										style={styles.icons}
 										className='fas fa-envelope'
@@ -43,8 +42,8 @@ class Contact extends Component {
 									liz@elizabethkipp.com
 								</ListItemText>
 							</Grid>
-							<Grid item xs={4}>
-								<ListItemText style={styles.listItems}>
+							<Grid item xs={12} sm={4}>
+								<ListItemText className='listItems'>
 									<i
 										style={styles.icons}
 										className='fa fa-home'
@@ -105,17 +104,6 @@ const styles = {
 		width: '100%',
 		justifyContent: 'center'
 	},
-	listItems: {
-		display: 'flex',
-		justifyContent: 'center',
-		fontSize: '20px',
-		fontFamily: 'Lato',
-		color: '#fff',
-		marginBottom: 75
-	},
-	contactList: {
-		marginTop: 125
-	},
 	icons: {
 		display: 'flex',
 		justifyContent: 'center',
@@ -123,7 +111,6 @@ const styles = {
 		color: '#fff',
 		marginBottom: '12px'
 	},
-
 	resume: {
 		display: 'flex',
 		color: '#000',

@@ -4,8 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices';
 import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
-
-import '../App.css';
+import '../../App.css';
+import './LandingPage.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -16,13 +16,6 @@ const useStyles = makeStyles(theme => ({
 	icons: {
 		fontSize: 50,
 		color: '#ff7676'
-	},
-
-	h2: {
-		fontSize: '2rem',
-		fontWeight: 300,
-		lineHeight: '1.5',
-		color: '#fff'
 	},
 	h3: {
 		margin: '1.414rem 0 .5rem',
@@ -47,14 +40,14 @@ export default function LandingPage() {
 			<Grid item xs={12} className='header-grid'>
 				<div data-aos='fade-up' data-aos-duration='2000'>
 					<Grid item xs={12} md={8}>
-						<h1 className='headerH1 header-text'>
+						<h1 className='headerH1'>
 							I'm a web developer based in Austin, Tx
 						</h1>
 					</Grid>
 					<Grid item xs={12} md={8}>
 						<p className='description'>
-							A photographer turned web developer. That's right, I went to the
-							dark side.
+							A photographer turned web developer. <br /> That's right, I went
+							to the dark side.
 						</p>
 					</Grid>
 				</div>

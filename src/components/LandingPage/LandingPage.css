@@ -1,0 +1,20 @@
+.font-fam {
+	font-family: 'Rubik', sans-serif !important;
+	margin-top: 60px;
+	background-color: #fefefe;
+	text-align: center;
+	color: #374352;
+}
+.skills {
+	background: #ffffff;
+	padding: 2em;
+	margin: 10px !important;
+	position: relative;
+	-webkit-box-shadow: 18px 17px 104px -24px rgba(0, 0, 0, 0.1);
+	box-shadow: 18px 17px 104px -24px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 768px) {
+	.skills {
+		text-align: center;
+	}
+}
