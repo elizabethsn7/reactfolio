@@ -18,7 +18,7 @@ class Contact extends Component {
 					<div data-aos='fade-up' data-aos-duration='2000'>
 						<Grid item xs={12}>
 							<h1 className='headerH1'>Call, email, text.</h1>
-							<h4 className='description'>You know what to do...</h4>
+							<h4>You know what to do...</h4>
 						</Grid>
 
 						<Grid container>
@@ -72,7 +72,7 @@ class Contact extends Component {
 									}}
 									className='workTogther'
 									variant='h1'>
-									Hello!
+									Hi!
 								</Typography>
 							</div>
 						</Grid>

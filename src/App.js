@@ -145,8 +145,8 @@ export default function App() {
 									</Link>
 								</Button>
 								<Button className={classes.navBtn} onClick={handleDrawerClose}>
-									<Link className={classes.link} to='/Projects'>
-										Projects
+									<Link className={classes.link} to='/Work'>
+										Work
 									</Link>
 								</Button>
 								<Button className={classes.navBtn} onClick={handleDrawerClose}>

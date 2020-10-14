@@ -1,22 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import './Projects.css';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+
+import './Work.css';
+import {makeStyles, createMuiTheme, ThemeProvider, Tab, Tabs, Box, Grid, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
+
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import clsx from 'clsx';
 import AppBar from '@material-ui/core/AppBar';
@@ -24,6 +11,7 @@ import MyFlixHome from '../../img/myFlixHome.jpg';
 import Meetup from '../../img/meetup.jpg';
 import AngularQuiz from '../../img/angular-quiz.jpg';
 import Vue from '../../img/vue-js.jpg';
+import DashCamp from '../../img/dash-camp.png';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -87,7 +75,7 @@ function a11yProps(index) {
 	};
 }
 
-export default function Projects() {
+export default function Work() {
 	const classes = useStyles();
 	const [value, setValue] = React.useState(0);
 
@@ -106,8 +94,8 @@ export default function Projects() {
 							aria-label='simple tabs example'>
 							>
 							<Tab label='React' {...a11yProps(0)} />
-							<Tab label='Angular' {...a11yProps(1)} />
-							<Tab label='Vue' {...a11yProps(2)} />
+							<Tab label='Vue' {...a11yProps(1)} />
+							<Tab label='Angular' {...a11yProps(2)} />
 						</Tabs>
 					</AppBar>
 				</Grid>
@@ -132,8 +120,8 @@ export default function Projects() {
 									</CardContent>
 								</CardActionArea>
 								<CardActions disableSpacing className={classes.actionBottom}>
-									<ExpansionPanel>
-										<ExpansionPanelSummary
+									<Accordion>
+										<AccordionSummary
 											style={{ display: 'flex' }}
 											expandIcon={<UnfoldMoreIcon />}
 											aria-controls='panel1a-content'
@@ -157,8 +145,8 @@ export default function Projects() {
 											<div className={clsx(classes.helper)}>
 												<Typography>Read More</Typography>
 											</div>
-										</ExpansionPanelSummary>
-										<ExpansionPanelDetails>
+										</AccordionSummary>
+										<AccordionDetails>
 											<Typography variant='body1'>
 												Users are able to access information about a variety of
 												movies, directors, ratings, and genres. They are able to
@@ -169,8 +157,8 @@ export default function Projects() {
 												HTML, CSS, JavaScript, React, Bootstrap, NoSQL, MongoDB,
 												Express, Passport, bcrypt
 											</Typography>
-										</ExpansionPanelDetails>
-									</ExpansionPanel>
+										</AccordionDetails>
+									</Accordion>
 								</CardActions>
 							</Card>
 						</Grid>
@@ -192,8 +180,8 @@ export default function Projects() {
 									</CardContent>
 								</CardActionArea>
 								<CardActions disableSpacing className={classes.actionBottom}>
-									<ExpansionPanel>
-										<ExpansionPanelSummary
+									<Accordion>
+										<AccordionSummary
 											expandIcon={<UnfoldMoreIcon />}
 											aria-controls='panel1a-content'
 											id='panel1a-header'>
@@ -208,8 +196,8 @@ export default function Projects() {
 											<div className={clsx(classes.helper)}>
 												<Typography>Read More</Typography>
 											</div>
-										</ExpansionPanelSummary>
-										<ExpansionPanelDetails>
+										</AccordionSummary>
+										<AccordionDetails>
 											<Typography variant='body1'>
 												A serverless progressive web app built with React using
 												TDD technique. The application uses the Meetup API to
@@ -219,16 +207,113 @@ export default function Projects() {
 												Unit, Integration, User Acceptance and End-to-End
 												Testing, OOP, React, React Bootstrap{' '}
 											</Typography>
-										</ExpansionPanelDetails>
-									</ExpansionPanel>
+										</AccordionDetails>
+									</Accordion>
 								</CardActions>
 							</Card>
 						</Grid>
 					</Grid>
 				</TabPanel>
 
+				{/* Vue Card */ }
+				<TabPanel value={ value } index={ 1 }>
+					<Grid container spacing={2}>
+						<Grid item xs={ 12 } sm={ 6 }>
+							<Card className={classes.cardyB}>
+								<CardActionArea>
+									<CardMedia
+										component='img'
+										alt='Dash Camp'
+										image={DashCamp}
+										title='Dash Camp'
+									/>
+								<CardContent>
+								<Typography gutterBottom variant='h5'>
+									Dash Camp Dashboard
+								</Typography>
+								</CardContent>
+								</CardActionArea>
+								<CardActions disableSpacing className={classes.actionBottom}>
+									<Accordion>
+										<AccordionSummary
+											expandIcon={<UnfoldMoreIcon />}
+											aria-controls='panel1a-content'
+											id='panel1a-header'>
+											<div className={clsx(classes.helper)}>
+												<Typography>Read More</Typography>
+											</div>
+										</AccordionSummary>
+										<AccordionDetails>
+											<Typography variant='body1'>
+												Dash Camp is an interactive virtual experience for young children.
+												<br></br>
+												<strong>Technologies used: </strong> <br></br>
+												HTML, CSS, Vue.js, Bootstrap, Typescript, Git
+											</Typography>
+										</AccordionDetails>
+									</Accordion>
+								</CardActions>
+							</Card>
+						</Grid>
+						<Grid item xs={12} sm={6}>
+							<Card className={classes.cardyB}>
+								<CardActionArea>
+									<CardMedia
+										component='img'
+										alt='Vue Todo App'
+										image={Vue}
+										title='Vue.js ToDo'
+									/>
+									<CardContent>
+										<Typography gutterBottom variant='h5'>
+											Vue.js Todo App
+										</Typography>
+									</CardContent>
+								</CardActionArea>
+								<CardActions disableSpacing className={classes.actionBottom}>
+									<Accordion>
+										<AccordionSummary
+											expandIcon={<UnfoldMoreIcon />}
+											aria-controls='panel1a-content'
+											id='panel1a-header'>
+											<Button>
+												<a
+													href='https://github.com/elizabethsn7/vue-todo'
+													target='_blank'
+													rel='noopener noreferrer'>
+													Github
+												</a>
+											</Button>
+											<Button>
+												<a
+													href='https://elizabethsn7.github.io/vue-todo/'
+													target='_blank'
+													rel='noopener noreferrer'>
+													Live Demo
+												</a>
+											</Button>
+											<div className={clsx(classes.helper)}>
+												<Typography>Read More</Typography>
+											</div>
+										</AccordionSummary>
+										<AccordionDetails>
+											<Typography variant='body1'>
+												An SPA where users are able to create, edit, complete, and
+												delete items from a list.
+												<br></br>
+												<strong>Technologies used: </strong> <br></br>
+												HTML, CSS, Vue.js, Vue Material, GitHub
+											</Typography>
+										</AccordionDetails>
+									</Accordion>
+								</CardActions>
+									</Card>
+						</Grid>
+						</Grid>
+						</TabPanel>
+					
 				{/* Angular Card */}
-				<TabPanel value={value} index={1}>
+				<TabPanel value={value} index={2}>
 					<Card className={classes.cardyB}>
 						<CardActionArea>
 							<CardMedia
@@ -244,8 +329,8 @@ export default function Projects() {
 							</CardContent>
 						</CardActionArea>
 						<CardActions disableSpacing className={classes.actionBottom}>
-							<ExpansionPanel>
-								<ExpansionPanelSummary
+							<Accordion>
+								<AccordionSummary
 									expandIcon={<UnfoldMoreIcon />}
 									aria-controls='panel1a-content'
 									id='panel1a-header'>
@@ -268,8 +353,8 @@ export default function Projects() {
 									<div className={clsx(classes.helper)}>
 										<Typography>Read More</Typography>
 									</div>
-								</ExpansionPanelSummary>
-								<ExpansionPanelDetails>
+								</AccordionSummary>
+								<AccordionDetails>
 									<Typography variant='body1'>
 										Advanced Angular concepts, from templates and data binding
 										to interpolation and routing. I encorporated Angular
@@ -278,62 +363,8 @@ export default function Projects() {
 										<strong>Technologies used:</strong> <br></br>
 										TypeScript, Javascript, Angular Material, GitHub Pages
 									</Typography>
-								</ExpansionPanelDetails>
-							</ExpansionPanel>
-						</CardActions>
-					</Card>
-				</TabPanel>
-				<TabPanel value={value} index={2}>
-					<Card className={classes.cardyB}>
-						<CardActionArea>
-							<CardMedia
-								component='img'
-								alt='Vue Todo App'
-								image={Vue}
-								title='Vue.js ToDo'
-							/>
-							<CardContent>
-								<Typography gutterBottom variant='h5'>
-									Vue.js Todo App
-								</Typography>
-							</CardContent>
-						</CardActionArea>
-						<CardActions disableSpacing className={classes.actionBottom}>
-							<ExpansionPanel>
-								<ExpansionPanelSummary
-									expandIcon={<UnfoldMoreIcon />}
-									aria-controls='panel1a-content'
-									id='panel1a-header'>
-									<Button>
-										<a
-											href='https://github.com/elizabethsn7/vue-todo'
-											target='_blank'
-											rel='noopener noreferrer'>
-											Github
-										</a>
-									</Button>
-									<Button>
-										<a
-											href='https://elizabethsn7.github.io/vue-todo/'
-											target='_blank'
-											rel='noopener noreferrer'>
-											Live Demo
-										</a>
-									</Button>
-									<div className={clsx(classes.helper)}>
-										<Typography>Read More</Typography>
-									</div>
-								</ExpansionPanelSummary>
-								<ExpansionPanelDetails>
-									<Typography variant='body1'>
-										An SPA where users are able to create, edit, complete, and
-										delete items from a list.
-										<br></br>
-										<strong>Technologies used: </strong> <br></br>
-										HTML, CSS, Vue.js, Vue Material, GitHub
-									</Typography>
-								</ExpansionPanelDetails>
-							</ExpansionPanel>
+								</AccordionDetails>
+							</Accordion>
 						</CardActions>
 					</Card>
 				</TabPanel>
