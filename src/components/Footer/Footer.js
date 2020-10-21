@@ -27,10 +27,8 @@ class Footer extends Component {
 
 							<Typography variant='h5' className='workTogther'>
 								I'm eager. I'm Willing.&nbsp;
-								<Typography className='rwd-break workTogther'>
 									{' '}
 									I'm looking forward to it.
-								</Typography>
 							</Typography>
 						</div>
 					</Grid>
